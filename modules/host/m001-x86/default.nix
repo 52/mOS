@@ -37,6 +37,13 @@
     members = [ "max" ];
   };
 
+  # Enable the "steam" module.
+  # See: "system/steam.nix"
+  steam = {
+    enable = true;
+    members = [ "max" ];
+  };
+
   # Tracks the original version for compatibility.
   # This should almost never be changed after the first installation.
   # See: https://nixos.wiki/wiki/FAQ/When_do_I_update_stateVersion

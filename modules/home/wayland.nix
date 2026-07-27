@@ -157,6 +157,9 @@ mkIf wayland.enable {
         # <MOD> + W to toggle workspace overview.
         "$mod, W, hyprexpo:expo, toggle"
 
+        # <MOD> + <Space> to toggle application launcher.
+        "$mod, SPACE, exec, uwsm app -- vicinae toggle"
+
         # <MOD> + 1 to switch workspace (1).
         "$mod, 1, workspace, 1"
         # <MOD> + 2 to switch workspace (2).
@@ -245,6 +248,15 @@ mkIf wayland.enable {
       # Display the wallpaper for all outputs.
       wallpaper = [ ", ${theme.wallpaper}" ];
     };
+  };
+
+  # Enable "Vicinae".
+  # See: https://github.com/vicinaehq/vicinae
+  programs.vicinae = {
+    enable = true;
+
+    # Autostart the server on boot.
+    systemd.enable = true;
   };
 
   # Configure "GTK".
