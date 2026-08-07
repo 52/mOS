@@ -19,7 +19,7 @@ in
   options.steam = {
     enable = mkOption {
       type = types.bool;
-      default = false;
+      default = config.wayland.enable;
       description = ''
         Whether to enable the "steam" module.
 
@@ -41,6 +41,11 @@ in
   };
 
   config = mkIf cfg.enable {
+    # Enforce the module dependencies.
+    assertions = [
+      (lib.requireModule "steam" "wayland" config.wayland.enable)
+    ];
+
     # Enable "Steam".
     # See: https://store.steampowered.com
     programs.steam = {

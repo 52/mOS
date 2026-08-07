@@ -16,6 +16,11 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
+    helium = {
+      url = "github:oxcl/nix-flake-helium-browser";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
     nur = {
       url = "github:nix-community/nur";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -97,13 +102,6 @@
           inherit specialArgs;
           modules = map lib.relativePath [
             "modules/host/m001-x86"
-          ];
-        };
-
-        m002-x86 = lib.nixosSystem {
-          inherit specialArgs;
-          modules = map lib.relativePath [
-            "modules/host/m002-x86"
           ];
         };
       };

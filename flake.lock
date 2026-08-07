@@ -99,6 +99,26 @@
         "type": "github"
       }
     },
+    "helium": {
+      "inputs": {
+        "nixpkgs": [
+          "nixpkgs"
+        ]
+      },
+      "locked": {
+        "lastModified": 1786012620,
+        "narHash": "sha256-IV0G3AUQvPVex1JUecUzLkMmslYRJ16PdmIljnyxm5c=",
+        "owner": "oxcl",
+        "repo": "nix-flake-helium-browser",
+        "rev": "a9711f61e7ac679182a6532bb5a6ed6c77deb3e0",
+        "type": "github"
+      },
+      "original": {
+        "owner": "oxcl",
+        "repo": "nix-flake-helium-browser",
+        "type": "github"
+      }
+    },
     "home-manager": {
       "inputs": {
         "nixpkgs": [
@@ -250,6 +270,7 @@
       "inputs": {
         "agenix": "agenix",
         "hardware": "hardware",
+        "helium": "helium",
         "home-manager": "home-manager_2",
         "nix-gaming": "nix-gaming",
         "nix-secrets": "nix-secrets",

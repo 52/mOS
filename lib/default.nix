@@ -48,6 +48,26 @@ rec {
       filterExt ext (builtins.attrNames (builtins.readDir (relativePath dir)))
     );
 
+  ## Create an assertion that requires another module.
+  ##
+  ## ```nix
+  ## assertions = [
+  ##   (requireModule "steam" "wayland" config.wayland.enable)
+  ## ];
+  ## ```
+  ##
+  #@ String -> String -> Bool -> AttrSet
+  requireModule = name: dependency: condition: {
+    assertion = condition;
+    message = ''
+      Module "${name}" requires "${dependency}" which is not enabled.
+
+      Resolve this issue by either:
+        - Enabling the dependency:  ${dependency}.enable = true;
+        - Disabling this module:    ${name}.enable = false;
+    '';
+  };
+
   ## Create a system user with a home-manager configuration.
   ##
   ## ```nix

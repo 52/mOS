@@ -152,7 +152,7 @@ mkIf wayland.enable {
         # <MOD> + T to open $TERMINAL.
         "$mod, T, exec, uwsm app -- ${env.TERMINAL or "foot"}"
         # <MOD> + F to open $BROWSER.
-        "$mod, F, exec, uwsm app -- ${env.BROWSER or "firefox"}"
+        "$mod, F, exec, uwsm app -- ${env.BROWSER or "helium"}"
 
         # <MOD> + W to toggle workspace overview.
         "$mod, W, hyprexpo:expo, toggle"

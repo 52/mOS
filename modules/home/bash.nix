@@ -4,7 +4,7 @@
   ...
 }:
 let
-  inherit (lib) mkMerge optionalAttrs optionalString;
+  inherit (lib) mkMerge optionalAttrs;
   inherit (config) git tmux vim;
 in
 {

@@ -16,6 +16,9 @@
     };
   };
 
+  # Add the "github:oxcl/nix-flake-helium-browser" overlay.
+  helium = inputs.helium.overlays.default;
+
   # Add the "github:nix-community/nur" overlay.
   nur = inputs.nur.overlays.default;
 }

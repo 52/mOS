@@ -150,21 +150,23 @@ in
 
     (mkIf cfg.enableSSHIntegration {
       # Enable the SSH client configuration.
-      programs.ssh.enable = true;
+      programs.ssh = {
+        enable = true;
 
-      # Disable the old default configuration values.
-      programs.ssh.enableDefaultConfig = false;
+        # Disable the old default configuration values.
+        enableDefaultConfig = false;
 
-      # Configure the "git" match block.
-      programs.ssh.matchBlocks."git" = {
-        # Set the user for authentication.
-        user = "git";
-        # Match only on "GitHub" and "GitLab" hosts.
-        host = "github.com gitlab.com";
-        # Set the identity file (Private Key).
-        identityFile = "${home.homeDirectory}/.ssh/id_ed25519";
-        # Only use the specified identity.
-        identitiesOnly = true;
+        # Configure the "git" match block.
+        matchBlocks."git" = {
+          # Set the user for authentication.
+          user = "git";
+          # Match only on "GitHub" and "GitLab" hosts.
+          host = "github.com gitlab.com";
+          # Set the identity file (Private Key).
+          identityFile = "${home.homeDirectory}/.ssh/id_ed25519";
+          # Only use the specified identity.
+          identitiesOnly = true;
+        };
       };
 
       # Sign "git" commits automatically.
