@@ -31,6 +31,7 @@ in
         woomer
         slurp
         grim
+        mpv
         ;
     };
 
